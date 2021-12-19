@@ -1,8 +1,9 @@
 import { Container, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
+import { weatherParams } from "../store/selectors";
 
 export const Temperature = () => {
-  const weatherData = useSelector((state) => state.data);
+  const weather = useSelector(weatherParams);
   return (
     <Container
       sx={{
@@ -18,7 +19,7 @@ export const Temperature = () => {
         component="div"
         gutterBottom
       >
-        {weatherData.temp && Math.floor(weatherData.temp)}
+        {weather.temp && Math.floor(weather.temp)}
       </Typography>
       <Typography
         sx={{ color: "#679ED2" }}
@@ -26,7 +27,7 @@ export const Temperature = () => {
         component="div"
         gutterBottom
       >
-        ℃
+        {weather.temp && "℃"}
       </Typography>
     </Container>
   );

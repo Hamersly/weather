@@ -1,8 +1,9 @@
 import { Typography } from "@mui/material";
 import { useSelector } from "react-redux";
+import { weatherParams } from "../store/selectors";
 
 export const Weather = () => {
-  const weatherData = useSelector((state) => state.data);
+  const weather = useSelector(weatherParams);
   return (
     <Typography
       sx={{ color: "#679ED2" }}
@@ -11,7 +12,7 @@ export const Weather = () => {
       component="div"
       gutterBottom
     >
-      {weatherData && weatherData.weather}
+      {weather && weather.weather}
     </Typography>
   );
 };

@@ -5,13 +5,14 @@ import { Point } from "./Point";
 import { Temperature } from "./Temperature";
 import { Weather } from "./Weather";
 import { Wind } from "./Wind";
+import { weatherParams } from "../store/selectors";
 
 export const InfoBlock = () => {
-  const weatherInfo = useSelector((state) => state.info);
+  const weather = useSelector(weatherParams);
 
   useEffect(() => {
     localStorage.clear();
-    localStorage.setItem("weather", JSON.stringify(weatherInfo));
+    localStorage.setItem("weather", JSON.stringify(weather));
   });
 
   return (

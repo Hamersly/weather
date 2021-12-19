@@ -29,7 +29,6 @@ export const Header = () => {
             lng: place.geometry.location.lng(),
           };
           dispatch({ type: "SET_POINT_INFO", payload: point });
-          // dispatch({ type: "SET_DATA_INFO", payload: point });
         }}
       />
     </Container>
