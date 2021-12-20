@@ -1,8 +1,8 @@
-import { useSelector } from "react-redux";
 import { Typography } from "@mui/material";
+import { useSelector } from "react-redux";
 import { weatherParams } from "../store/selectors";
 
-export const Wind = () => {
+export const Humidity = () => {
   const weather = useSelector(weatherParams);
   return (
     <Typography
@@ -12,7 +12,7 @@ export const Wind = () => {
       component="div"
       gutterBottom
     >
-      {weather.wind >= 1 && `Ветер: ${Math.round(weather.wind, -1)} м/сек`}
+      Влажность: {weather.humidity} %
     </Typography>
   );
 };

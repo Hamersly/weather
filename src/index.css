@@ -10,7 +10,9 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #2818B1;
+  /*background-color: #2818B1;*/
+  background-image: url(../public/images.jpeg);
+  background-repeat: repeat;
 }
 
 code {

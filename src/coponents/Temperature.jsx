@@ -19,7 +19,7 @@ export const Temperature = () => {
         component="div"
         gutterBottom
       >
-        {weather.temp && Math.floor(weather.temp)}
+        {weather.temp && Math.round(weather.temp)}
       </Typography>
       <Typography
         sx={{ color: "#679ED2" }}

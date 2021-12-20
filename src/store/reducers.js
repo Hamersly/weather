@@ -21,13 +21,11 @@ export const weatherReducer = (state = initialState(), action) => {
         pointName: action.payload.address,
         locationLat: action.payload.lat,
         locationLng: action.payload.lng,
-      };
-    case "ADD_POINT_DATA":
-      return {
-        ...state,
         temp: action.payload.main.temp,
         weather: action.payload.weather[0].description,
         wind: action.payload.wind.speed,
+        humidity: action.payload.main.humidity,
+        pressure: action.payload.main.pressure,
       };
     default:
       return state;

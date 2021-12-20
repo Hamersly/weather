@@ -16,7 +16,7 @@ export const Header = () => {
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        margin: "35px 0",
+        margin: "10px 0 35px 0",
       }}
     >
       <Autocomplete
