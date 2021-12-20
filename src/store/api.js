@@ -9,7 +9,6 @@ export async function getData({ lat, lng }) {
 }
 
 export async function setDataLocalStorage(func) {
-  //Подъмена данных о погоде в LocalStorage на свежие, полученные из getData()
   try {
     const data = JSON.parse(localStorage.getItem("weather"));
 
