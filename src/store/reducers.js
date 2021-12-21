@@ -1,6 +1,6 @@
 const initialState = () => {
-  const localTodo = JSON.parse(localStorage.getItem("weather"));
-  if (!localTodo) {
+  const localParams = JSON.parse(localStorage.getItem("weather"));
+  if (!localParams) {
     return {
       pointName: "",
       locationLat: "",
@@ -12,7 +12,7 @@ const initialState = () => {
       pressure: "",
     };
   }
-  return localTodo;
+  return localParams;
 };
 
 export const weatherReducer = (state = initialState(), action) => {

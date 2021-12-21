@@ -11,7 +11,7 @@ import { Pressure } from "./Pressure";
 
 export const InfoBlock = () => {
   const weather = useSelector(weatherParamsSelector);
-  const localTodo = JSON.parse(localStorage.getItem("weather"));
+  const localParams = JSON.parse(localStorage.getItem("weather"));
   const dispatch = useDispatch();
 
   const oldParams = {
@@ -23,7 +23,7 @@ export const InfoBlock = () => {
   useEffect(() => {
     localStorage.clear();
     localStorage.setItem("weather", JSON.stringify(weather));
-    if (localTodo.pointName) {
+    if (localParams && localParams.pointName) {
       dispatch({ type: "SET_POINT_INFO", payload: oldParams });
     }
   });

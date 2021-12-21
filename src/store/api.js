@@ -5,7 +5,7 @@ export async function getData(lat, lng) {
   const baseUrl = "https://api.openweathermap.org";
   const url = `${baseUrl}/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&lang=ru&appid=${apiKey}`;
 
-  const {main, weather, wind} = await axios(url)
+  const { main, weather, wind } = await axios(url)
     .then((response) => response.data)
     .catch((error) => console.log(error));
 
