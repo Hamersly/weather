@@ -29,6 +29,7 @@ export const weatherReducer = (state = initialState(), action) => {
         humidity: action.payload.humidity,
         pressure: action.payload.pressure,
       };
+
     default:
       return state;
   }

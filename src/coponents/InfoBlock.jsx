@@ -13,19 +13,16 @@ export const InfoBlock = () => {
   const weather = useSelector(weatherParamsSelector);
   const dispatch = useDispatch();
 
-  const reboot = () => {
-    const oldParams = {
-      pointName: weather.pointName,
-      locationLat: weather.locationLat,
-      locationLng: weather.locationLng,
-    };
-    dispatch({ type: "SET_POINT_INFO", payload: oldParams });
+  const oldParams = {
+    pointName: weather.pointName,
+    locationLat: weather.locationLat,
+    locationLng: weather.locationLng,
   };
 
   useEffect(() => {
+    dispatch({ type: "SET_POINT_INFO", payload: oldParams });
     localStorage.clear();
     localStorage.setItem("weather", JSON.stringify(weather));
-    reboot();
   });
 
   return (

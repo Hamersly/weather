@@ -1,5 +1,5 @@
 import { all } from "redux-saga/effects";
-import { setParamsSaga, setPointSaga } from "./sagas";
+import setPointSaga from "./setPointSaga";
 
 export default function* rootSaga() {
   yield all([setPointSaga()]);
