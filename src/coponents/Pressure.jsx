@@ -1,9 +1,9 @@
 import { Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import { weatherParams } from "../store/selectors";
+import { weatherParamsSelector } from "../store/selectors";
 
 export const Pressure = () => {
-  const weather = useSelector(weatherParams);
+  const weather = useSelector(weatherParamsSelector);
   return (
     <Typography
       sx={{ color: "#679ED2" }}
@@ -12,7 +12,8 @@ export const Pressure = () => {
       component="div"
       gutterBottom
     >
-      Давление: {Math.round(weather.pressure / 1.33322)} мм.рт.ст
+      {weather.pressure &&
+        `Давление: ${Math.round(weather.pressure / 1.33322)} мм.рт.ст`}
     </Typography>
   );
 };

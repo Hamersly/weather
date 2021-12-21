@@ -24,9 +24,9 @@ export const Header = () => {
         onClick={() => clearValue()}
         onPlaceSelected={(place) => {
           const point = {
-            address: place.address_components[0].long_name,
-            lat: place.geometry.location.lat(),
-            lng: place.geometry.location.lng(),
+            pointName: place.address_components[0].long_name,
+            locationLat: place.geometry.location.lat(),
+            locationLng: place.geometry.location.lng(),
           };
           dispatch({ type: "SET_POINT_INFO", payload: point });
         }}

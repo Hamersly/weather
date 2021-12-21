@@ -1,9 +1,9 @@
 import { Container, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import { weatherParams } from "../store/selectors";
+import { weatherParamsSelector } from "../store/selectors";
 
 export const Temperature = () => {
-  const weather = useSelector(weatherParams);
+  const weather = useSelector(weatherParamsSelector);
   return (
     <Container
       sx={{

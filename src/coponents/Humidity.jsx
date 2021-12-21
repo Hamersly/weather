@@ -1,9 +1,9 @@
 import { Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import { weatherParams } from "../store/selectors";
+import { weatherParamsSelector } from "../store/selectors";
 
 export const Humidity = () => {
-  const weather = useSelector(weatherParams);
+  const weather = useSelector(weatherParamsSelector);
   return (
     <Typography
       sx={{ color: "#679ED2" }}
@@ -12,7 +12,7 @@ export const Humidity = () => {
       component="div"
       gutterBottom
     >
-      Влажность: {weather.humidity} %
+      {weather.humidity && `Влажность: ${weather.humidity} %`}
     </Typography>
   );
 };
