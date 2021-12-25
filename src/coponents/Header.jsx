@@ -1,6 +1,7 @@
 import { Container } from "@mui/material";
 import Autocomplete from "react-google-autocomplete";
 import { useDispatch } from "react-redux";
+import { setPointInfo } from "../store/weatherSlice";
 
 export const Header = () => {
   const dispatch = useDispatch();
@@ -21,14 +22,14 @@ export const Header = () => {
     >
       <Autocomplete
         className="autocomplete"
-        onClick={() => clearValue()}
+        onClick={clearValue}
         onPlaceSelected={(place) => {
           const point = {
             pointName: place.address_components[0].long_name,
             locationLat: place.geometry.location.lat(),
             locationLng: place.geometry.location.lng(),
           };
-          dispatch({ type: "SET_POINT_INFO", payload: point });
+          dispatch(setPointInfo(point));
         }}
       />
     </Container>

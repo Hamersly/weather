@@ -4,6 +4,8 @@ import { weatherParamsSelector } from "../store/selectors";
 
 export const Pressure = () => {
   const weather = useSelector(weatherParamsSelector);
+  const press = Math.round(weather.pressure / 1.33322);
+
   return (
     <Typography
       sx={{ color: "#679ED2" }}
@@ -12,8 +14,7 @@ export const Pressure = () => {
       component="div"
       gutterBottom
     >
-      {weather.pressure &&
-        `Давление: ${Math.round(weather.pressure / 1.33322)} мм.рт.ст`}
+      {weather.pressure && `Давление: ${press} мм.рт.ст`}
     </Typography>
   );
 };

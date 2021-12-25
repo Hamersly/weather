@@ -3,11 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { Point } from "./Point";
 import { Temperature } from "./Temperature";
-import { Weather } from "./Weather";
+import { Condition } from "./Condition";
 import { Wind } from "./Wind";
 import { weatherParamsSelector } from "../store/selectors";
 import { Humidity } from "./Humidity";
 import { Pressure } from "./Pressure";
+import { setPointInfo } from "../store/weatherSlice";
 
 export const InfoBlock = () => {
   const weather = useSelector(weatherParamsSelector);
@@ -21,10 +22,9 @@ export const InfoBlock = () => {
   };
 
   useEffect(() => {
-    localStorage.clear();
     localStorage.setItem("weather", JSON.stringify(weather));
     if (localParams && localParams.pointName) {
-      dispatch({ type: "SET_POINT_INFO", payload: oldParams });
+      dispatch(setPointInfo(oldParams));
     }
   });
 
@@ -39,7 +39,7 @@ export const InfoBlock = () => {
     >
       <Point />
       <Temperature />
-      <Weather />
+      <Condition />
       <Wind />
       <Humidity />
       <Pressure />

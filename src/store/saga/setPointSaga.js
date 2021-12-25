@@ -1,13 +1,14 @@
 import { call, put, select, takeLeading } from "redux-saga/effects";
 import { getData } from "../api";
 import { weatherParamsSelector } from "../selectors";
+import { addPointInfo, setPointInfo } from "../weatherSlice";
 
-const result = (arr1, arr2) => {
-  return Object.keys(arr1).every((key) => arr1[key] === arr2[key]);
+const isSame = (obj1, obj2) => {
+  return Object.keys(obj1).every((key) => obj1[key] === obj2[key]);
 };
 
 export default function* setPointSaga() {
-  yield takeLeading("SET_POINT_INFO", infoWorker);
+  yield takeLeading(setPointInfo, infoWorker);
 }
 
 function* infoWorker(action) {
@@ -17,15 +18,12 @@ function* infoWorker(action) {
 
     const data = yield call(getData, lat, lng);
 
-    const oldArr = yield select(weatherParamsSelector);
-    const newArr = { ...data, ...action.payload };
-    const equal = yield call(result, oldArr, newArr);
+    const oldParams = yield select(weatherParamsSelector);
+    const newParams = { ...data, ...action.payload };
+    const equal = yield call(isSame, oldParams, newParams);
 
     if (equal === false) {
-      yield put({
-        type: "ADD_POINT_INFO",
-        payload: newArr,
-      });
+      yield put(addPointInfo(newParams));
     }
   } catch (err) {
     console.log(err);

@@ -1,4 +1,3 @@
-import "./App.css";
 import { Header } from "./coponents/Header";
 import { InfoBlock } from "./coponents/InfoBlock";
 import { Container } from "@mui/material";
