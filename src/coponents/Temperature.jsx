@@ -11,7 +11,7 @@ export const Temperature = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "flex-start",
-        margin: "50px 0 30px 0",
+        marginTop: "30px",
       }}
     >
       <Typography
