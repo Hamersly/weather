@@ -4,7 +4,19 @@ const initialState = () => {
   const localParams = JSON.parse(localStorage.getItem("weather"));
   if (!localParams) {
     return {
-      pointName: "",
+      point: {
+        pointName: "",
+        locationLat: "",
+        locationLng: "",
+      },
+      today: {
+        temp: "",
+        condition: "",
+        wind: "",
+        humidity: "",
+        pressure: "",
+      },
+      daily: {},
     };
   }
   return localParams;

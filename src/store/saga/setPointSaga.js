@@ -1,6 +1,6 @@
 import { call, put, select, takeLeading } from "redux-saga/effects";
 import { getData } from "../api";
-import { weatherParamsSelector } from "../selectors";
+import { todayParamsSelector } from "../selectors";
 import { addPointInfo, setPointInfo } from "../weatherSlice";
 
 const isSame = (obj1, obj2) => {
@@ -18,9 +18,9 @@ function* infoWorker(action) {
 
     const data = yield call(getData, lat, lng);
 
-    const oldParams = yield select(weatherParamsSelector);
-    const newParams = { ...data, ...action.payload };
-    const equal = yield call(isSame, oldParams, newParams);
+    const oldParams = yield select(todayParamsSelector);
+    const newParams = { ...data, point: action.payload };
+    const equal = yield call(isSame, oldParams, newParams.today);
 
     if (equal === false) {
       yield put(addPointInfo(newParams));

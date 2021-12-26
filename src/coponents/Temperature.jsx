@@ -1,9 +1,9 @@
 import { Container, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import { weatherParamsSelector } from "../store/selectors";
+import { todayParamsSelector, weatherParamsSelector } from "../store/selectors";
 
 export const Temperature = () => {
-  const weather = useSelector(weatherParamsSelector);
+  const weather = useSelector(todayParamsSelector);
 
   return (
     <Container
@@ -11,7 +11,7 @@ export const Temperature = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "flex-start",
-        marginTop: "30px",
+        marginTop: "20px",
       }}
     >
       <Typography

@@ -1,9 +1,9 @@
 import { Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import { weatherParamsSelector } from "../store/selectors";
+import { pointParamsSelector } from "../store/selectors";
 
 export const Point = () => {
-  const weather = useSelector(weatherParamsSelector);
+  const point = useSelector(pointParamsSelector);
 
   return (
     <Typography
@@ -12,7 +12,7 @@ export const Point = () => {
       component="div"
       gutterBottom
     >
-      {weather.pointName}
+      {point.pointName}
     </Typography>
   );
 };

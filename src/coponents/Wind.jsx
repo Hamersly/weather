@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
 import { Typography } from "@mui/material";
-import { weatherParamsSelector } from "../store/selectors";
+import { todayParamsSelector } from "../store/selectors";
 
 export const Wind = () => {
-  const weather = useSelector(weatherParamsSelector);
+  const weather = useSelector(todayParamsSelector);
 
   return (
     <Typography
@@ -15,9 +15,7 @@ export const Wind = () => {
     >
       {weather.wind >= 1
         ? `Ветер: ${Math.round(weather.wind, -1)} м/сек`
-        : weather.wind
-        ? `Ветер: ${weather.wind} м/сек`
-        : weather.wind < 0.1 && "Ветра нет"}
+        : weather.wind && `Ветер: ${weather.wind} м/сек`}
     </Typography>
   );
 };

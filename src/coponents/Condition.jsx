@@ -1,9 +1,9 @@
 import { Container, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import { weatherParamsSelector } from "../store/selectors";
+import { todayParamsSelector, weatherParamsSelector } from "../store/selectors";
 
 export const Condition = () => {
-  const weather = useSelector(weatherParamsSelector);
+  const weather = useSelector(todayParamsSelector);
 
   return (
     <Container
@@ -15,7 +15,7 @@ export const Condition = () => {
     >
       <Typography
         sx={{ color: "#679ED2" }}
-        mt={1}
+        // mt={1}
         variant="h5"
         component="div"
         gutterBottom

@@ -1,31 +1,30 @@
-import { Container } from "@mui/material";
+import { Button, Container } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { Point } from "./Point";
 import { Temperature } from "./Temperature";
 import { Condition } from "./Condition";
 import { Wind } from "./Wind";
-import { weatherParamsSelector } from "../store/selectors";
+import { pointParamsSelector, weatherParamsSelector } from "../store/selectors";
 import { Humidity } from "./Humidity";
 import { Pressure } from "./Pressure";
 import { setPointInfo } from "../store/weatherSlice";
+import { ButtonDaily } from "./ButtonDaily";
 
 export const InfoBlock = () => {
+  const point = useSelector(pointParamsSelector);
   const weather = useSelector(weatherParamsSelector);
-  const localParams = JSON.parse(localStorage.getItem("weather"));
   const dispatch = useDispatch();
 
   const oldParams = {
-    pointName: weather.pointName,
-    locationLat: weather.locationLat,
-    locationLng: weather.locationLng,
+    pointName: point.pointName,
+    locationLat: point.locationLat,
+    locationLng: point.locationLng,
   };
 
   useEffect(() => {
     localStorage.setItem("weather", JSON.stringify(weather));
-    if (localParams && localParams.pointName) {
-      dispatch(setPointInfo(oldParams));
-    }
+    if (oldParams.pointName) dispatch(setPointInfo(oldParams));
   });
 
   return (
@@ -43,6 +42,7 @@ export const InfoBlock = () => {
       <Wind />
       <Humidity />
       <Pressure />
+      <ButtonDaily />
     </Container>
   );
 };
