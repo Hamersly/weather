@@ -6,13 +6,13 @@ export default function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/weather">
+        <Route path="/weather/day">
           <DayPage />
         </Route>
         <Route path="/weather/week">
           <WeekPage />
         </Route>
-        <Redirect to="/weather" />
+        <Redirect to="/weather/day" />
       </Switch>
     </BrowserRouter>
   );
