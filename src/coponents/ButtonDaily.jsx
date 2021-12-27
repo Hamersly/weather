@@ -14,7 +14,7 @@ export const ButtonDaily = () => {
       }}
     >
       {daily.length && (
-        <Link className="link-button" to="/week">
+        <Link className="link-button" to="/weather/week">
           <Button variant="contained">Прогноз на неделю</Button>
         </Link>
       )}
