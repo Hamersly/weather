@@ -35,3 +35,13 @@ code {
 .autocomplete::placeholder {
   color: #679ed2;
 }
+
+.link-button {
+  text-decoration: none;
+}
+
+.border {
+  border-bottom: 1px solid #679ed2;
+  width: 100%;
+}
+

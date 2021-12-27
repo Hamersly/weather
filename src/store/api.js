@@ -16,7 +16,7 @@ export async function getData(lat, lng) {
     humidity: current.humidity,
     pressure: current.pressure,
   };
-  // console.log(today, daily);
+
   return {
     today,
     daily,

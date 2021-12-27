@@ -1,25 +1,24 @@
-import { Button, Container } from "@mui/material";
+import { Container } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { Point } from "./Point";
 import { Temperature } from "./Temperature";
 import { Condition } from "./Condition";
 import { Wind } from "./Wind";
-import { pointParamsSelector, weatherParamsSelector } from "../store/selectors";
+import { weatherParamsSelector } from "../store/selectors";
 import { Humidity } from "./Humidity";
 import { Pressure } from "./Pressure";
 import { setPointInfo } from "../store/weatherSlice";
 import { ButtonDaily } from "./ButtonDaily";
 
 export const InfoBlock = () => {
-  const point = useSelector(pointParamsSelector);
   const weather = useSelector(weatherParamsSelector);
   const dispatch = useDispatch();
 
   const oldParams = {
-    pointName: point.pointName,
-    locationLat: point.locationLat,
-    locationLng: point.locationLng,
+    pointName: weather.point.pointName,
+    locationLat: weather.point.locationLat,
+    locationLng: weather.point.locationLng,
   };
 
   useEffect(() => {

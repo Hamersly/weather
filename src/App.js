@@ -1,19 +1,19 @@
-import { Header } from "./coponents/Header";
-import { InfoBlock } from "./coponents/InfoBlock";
-import { Container } from "@mui/material";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { DayPage } from "./pages/DayPage";
+import { WeekPage } from "./pages/WeekPage";
 
 export default function App() {
   return (
-    <Container
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Header />
-      <InfoBlock />
-    </Container>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/day">
+          <DayPage />
+        </Route>
+        <Route path="/week">
+          <WeekPage />
+        </Route>
+        <Redirect to="/day" />
+      </Switch>
+    </BrowserRouter>
   );
 }

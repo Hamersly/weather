@@ -1,6 +1,7 @@
 import { Button, Container } from "@mui/material";
 import { useSelector } from "react-redux";
 import { dailyParamsSelector } from "../store/selectors";
+import { Link } from "react-router-dom";
 
 export const ButtonDaily = () => {
   const daily = useSelector(dailyParamsSelector);
@@ -12,7 +13,11 @@ export const ButtonDaily = () => {
         alignItems: "center",
       }}
     >
-      {daily.length && <Button variant="contained"> Прогноз на неделю </Button>}
+      {daily.length && (
+        <Link className="link-button" to="/week">
+          <Button variant="contained">Прогноз на неделю</Button>
+        </Link>
+      )}
     </Container>
   );
 };
