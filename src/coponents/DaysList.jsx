@@ -1,4 +1,4 @@
-import { Container, Typography } from "@mui/material";
+import { Container } from "@mui/material";
 import { useSelector } from "react-redux";
 import { dailyParamsSelector } from "../store/selectors";
 import { Day } from "./Day";

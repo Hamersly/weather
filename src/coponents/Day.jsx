@@ -1,8 +1,12 @@
 import { Container, Typography } from "@mui/material";
-import { reformatDate } from "../utils/utils";
 
 export const Day = ({ item }) => {
   const { dt, temp, weather } = item;
+
+  const reformatDate = (date) => {
+    const item = new Date(date * 1000);
+    return [item.getDate(), item.getMonth() + 1].join(".");
+  };
 
   return (
     <Container
@@ -50,7 +54,7 @@ export const Day = ({ item }) => {
       >
         <img
           src={`https://openweathermap.org/img/wn/${weather[0].icon}.png`}
-          alt="weatherImage"
+          alt="weatherIcon"
         />
       </Container>
     </Container>

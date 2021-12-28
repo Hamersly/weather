@@ -16,7 +16,9 @@ const initialState = () => {
         humidity: "",
         pressure: "",
       },
-      daily: {},
+      daily: {
+        day: "",
+      },
     };
   }
   return localParams;

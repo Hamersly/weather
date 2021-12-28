@@ -1,6 +1,6 @@
 import { Container, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import { todayParamsSelector, weatherParamsSelector } from "../store/selectors";
+import { todayParamsSelector } from "../store/selectors";
 
 export const Condition = () => {
   const weather = useSelector(todayParamsSelector);

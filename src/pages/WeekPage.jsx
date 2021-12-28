@@ -1,4 +1,4 @@
-import { Container, Typography } from "@mui/material";
+import { Container } from "@mui/material";
 import { ButtonBack } from "../coponents/ButtonBack";
 import { DaysList } from "../coponents/DaysList";
 import { WeekTitle } from "../coponents/WeekTitle";

@@ -2,7 +2,7 @@ import { call, put, select, takeLeading } from "redux-saga/effects";
 import { getData } from "../api";
 import { todayParamsSelector } from "../selectors";
 import { addPointInfo, setPointInfo } from "../weatherSlice";
-import { isSame } from "../../utils/utils";
+import { equals } from "ramda";
 
 export default function* setPointSaga() {
   yield takeLeading(setPointInfo, infoWorker);
@@ -17,7 +17,7 @@ function* infoWorker(action) {
 
     const oldParams = yield select(todayParamsSelector);
     const newParams = { ...data, point: action.payload };
-    const equal = yield call(isSame, oldParams, newParams.today);
+    const equal = yield call(equals, oldParams, newParams.today);
 
     if (equal === false) {
       yield put(addPointInfo(newParams));
