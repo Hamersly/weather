@@ -6,46 +6,51 @@ export const TitleParams = () => {
       fixed
       sx={{
         display: "flex",
-        justifyContent: "space-between",
         alignItems: "center",
         margin: "15px 0",
       }}
     >
-      <Container
+      <Typography
         sx={{
+          color: "#679ED2",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          width: "20%",
         }}
+        variant="h6"
+        component="div"
       >
-        <Typography sx={{ color: "#679ED2" }} variant="h6" component="div">
-          Дата
-        </Typography>
-      </Container>
+        Дата
+      </Typography>
 
-      <Container
+      <Typography
         sx={{
+          color: "#679ED2",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          width: "100%",
         }}
+        variant="h6"
+        component="div"
       >
-        <Typography sx={{ color: "#679ED2" }} variant="h6" component="div">
-          °С
-        </Typography>
-      </Container>
+        °С
+      </Typography>
 
-      <Container
+      <Typography
         sx={{
+          color: "#679ED2",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          width: "20%",
         }}
+        variant="h6"
+        component="div"
       >
-        <Typography sx={{ color: "#679ED2" }} variant="h6" component="div">
-          Осадки
-        </Typography>
-      </Container>
+        Осадки
+      </Typography>
     </Container>
   );
 };

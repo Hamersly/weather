@@ -1,19 +1,19 @@
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 import { DayPage } from "./pages/DayPage";
 import { WeekPage } from "./pages/WeekPage";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
-        <Route path="/weather/day">
+        <Route exact path="/day">
           <DayPage />
         </Route>
-        <Route path="/weather/week">
+        <Route exact path="/week">
           <WeekPage />
         </Route>
-        <Redirect to="/weather/day" />
+        <Redirect to="/day" />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }

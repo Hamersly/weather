@@ -1,56 +1,51 @@
 import { Container, Typography } from "@mui/material";
+import { reformatDate } from "../utils/utils";
 
 export const Day = ({ item }) => {
   const { dt, temp, weather } = item;
-
-  const round = (number) => {
-    return Math.round(number, -1);
-  };
-
-  const reformatDate = (date) => {
-    const item = new Date(date * 1000);
-    return [item.getDate(), item.getMonth() + 1].join(".");
-  };
 
   return (
     <Container
       fixed
       sx={{
         display: "flex",
-        justifyContent: "space-between",
         alignItems: "center",
-        // margin: "5px 0",
       }}
     >
-      <Container
+      <Typography
         sx={{
+          color: "#679ED2",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          width: "20%",
         }}
+        variant="h6"
+        component="div"
       >
-        <Typography sx={{ color: "#679ED2" }} variant="h6" component="div">
-          {reformatDate(dt)}
-        </Typography>
-      </Container>
+        {reformatDate(dt)}
+      </Typography>
+
+      <Typography
+        sx={{
+          color: "#679ED2",
+          display: "inline-flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+        }}
+        variant="h6"
+        component="div"
+      >
+        {Math.round(temp.day)}°...{Math.round(temp.night)}°
+      </Typography>
 
       <Container
         sx={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-        }}
-      >
-        <Typography sx={{ color: "#679ED2" }} variant="h6" component="div">
-          {round(temp.day)}°/{round(temp.night)}°
-        </Typography>
-      </Container>
-
-      <Container
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          width: "20%",
         }}
       >
         <img

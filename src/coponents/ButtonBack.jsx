@@ -11,7 +11,7 @@ export const ButtonBack = () => {
         margin: "30px 0",
       }}
     >
-      <Link className="link-button" to="/weather/day">
+      <Link className="link-button" to="/day">
         <Button variant="contained">назад</Button>
       </Link>
     </Container>

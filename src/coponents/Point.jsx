@@ -8,7 +8,7 @@ export const Point = () => {
   return (
     <Typography
       sx={{ color: "#679ED2", textAlign: "center" }}
-      variant="h3"
+      variant="h4"
       component="div"
       gutterBottom
     >

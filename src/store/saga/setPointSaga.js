@@ -2,10 +2,7 @@ import { call, put, select, takeLeading } from "redux-saga/effects";
 import { getData } from "../api";
 import { todayParamsSelector } from "../selectors";
 import { addPointInfo, setPointInfo } from "../weatherSlice";
-
-const isSame = (obj1, obj2) => {
-  return Object.keys(obj1).every((key) => obj1[key] === obj2[key]);
-};
+import { isSame } from "../../utils/utils";
 
 export default function* setPointSaga() {
   yield takeLeading(setPointInfo, infoWorker);
