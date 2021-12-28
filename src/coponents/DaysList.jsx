@@ -9,6 +9,7 @@ export const DaysList = () => {
 
   return (
     <Container
+      disableGutters={true}
       sx={{
         display: "flex",
         flexDirection: "column",
@@ -17,7 +18,7 @@ export const DaysList = () => {
       }}
     >
       <TitleParams />
-      <div className="border" />
+
       {daily.map((item) => (
         <Day item={item} key={item.dt} />
       ))}
