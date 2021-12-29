@@ -12,6 +12,7 @@ export const ButtonDaily = () => {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        margin: "0 0 30px 0",
       }}
     >
       {daily.length && (
