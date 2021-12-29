@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import { pointParamsSelector } from "../store/selectors";
+import { pointParamsSelector } from "../store/weatherLayer/selectors";
 
 export const Point = () => {
   const point = useSelector(pointParamsSelector);

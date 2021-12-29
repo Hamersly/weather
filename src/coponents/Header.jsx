@@ -1,7 +1,7 @@
 import { Container } from "@mui/material";
 import Autocomplete from "react-google-autocomplete";
 import { useDispatch } from "react-redux";
-import { setPointInfo } from "../store/weatherSlice";
+import { setPointInfo } from "../store/weatherLayer/weatherSlice";
 
 export const Header = () => {
   const dispatch = useDispatch();

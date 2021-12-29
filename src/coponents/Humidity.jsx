@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import { todayParamsSelector } from "../store/selectors";
+import { todayParamsSelector } from "../store/weatherLayer/selectors";
 
 export const Humidity = () => {
   const weather = useSelector(todayParamsSelector);

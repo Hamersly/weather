@@ -5,10 +5,10 @@ import { Point } from "./Point";
 import { Temperature } from "./Temperature";
 import { Condition } from "./Condition";
 import { Wind } from "./Wind";
-import { weatherParamsSelector } from "../store/selectors";
+import { weatherParamsSelector } from "../store/weatherLayer/selectors";
 import { Humidity } from "./Humidity";
 import { Pressure } from "./Pressure";
-import { setPointInfo } from "../store/weatherSlice";
+import { setPointInfo } from "../store/weatherLayer/weatherSlice";
 import { ButtonDaily } from "./ButtonDaily";
 
 export const InfoBlock = () => {
@@ -23,7 +23,7 @@ export const InfoBlock = () => {
 
   useEffect(() => {
     localStorage.setItem("weather", JSON.stringify(weather));
-    if (oldParams.pointName) dispatch(setPointInfo(oldParams));
+    if (!!oldParams.pointName) dispatch(setPointInfo(oldParams));
   });
 
   return (
@@ -41,7 +41,8 @@ export const InfoBlock = () => {
       <Wind />
       <Humidity />
       <Pressure />
-      <ButtonDaily />
+
+      {!!weather.daily.length && <ButtonDaily />}
     </Container>
   );
 };

@@ -1,7 +1,7 @@
 import { call, put, select, takeLeading } from "redux-saga/effects";
-import { getData } from "../api";
-import { todayParamsSelector } from "../selectors";
-import { addPointInfo, setPointInfo } from "../weatherSlice";
+import { getData } from "./api";
+import { todayParamsSelector } from "./selectors";
+import { addPointInfo, setPointInfo } from "./weatherSlice";
 import { equals } from "ramda";
 
 export default function* setPointSaga() {

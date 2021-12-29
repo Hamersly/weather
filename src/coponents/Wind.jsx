@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Typography } from "@mui/material";
-import { todayParamsSelector } from "../store/selectors";
+import { todayParamsSelector } from "../store/weatherLayer/selectors";
 
 export const Wind = () => {
   const weather = useSelector(todayParamsSelector);

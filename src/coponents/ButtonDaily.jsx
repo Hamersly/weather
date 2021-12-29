@@ -1,6 +1,6 @@
 import { Button, Container } from "@mui/material";
 import { useSelector } from "react-redux";
-import { dailyParamsSelector } from "../store/selectors";
+import { dailyParamsSelector } from "../store/weatherLayer/selectors";
 import { Link } from "react-router-dom";
 
 export const ButtonDaily = () => {

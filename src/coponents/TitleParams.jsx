@@ -1,7 +1,6 @@
-import {Container, Typography} from "@mui/material";
+import { Container, Typography } from "@mui/material";
 
 export const TitleParams = () => {
-
   const style = {
     color: "#679ED2",
     display: "flex",
@@ -12,7 +11,6 @@ export const TitleParams = () => {
 
   return (
     <Container
-      fixed
       sx={{
         display: "flex",
         alignItems: "center",
@@ -20,7 +18,6 @@ export const TitleParams = () => {
         borderBottom: "1px solid #679ed2",
       }}
     >
-
       <Typography sx={style} variant="h6" component="div">
         Дата
       </Typography>
@@ -32,7 +29,6 @@ export const TitleParams = () => {
       <Typography sx={style} variant="h6" component="div">
         Осадки
       </Typography>
-
     </Container>
   );
 };

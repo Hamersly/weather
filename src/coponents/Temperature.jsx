@@ -1,6 +1,6 @@
-import {Container, Typography} from "@mui/material";
-import {useSelector} from "react-redux";
-import {todayParamsSelector} from "../store/selectors";
+import { Container, Typography } from "@mui/material";
+import { useSelector } from "react-redux";
+import { todayParamsSelector } from "../store/weatherLayer/selectors";
 
 export const Temperature = () => {
   const weather = useSelector(todayParamsSelector);
@@ -14,9 +14,8 @@ export const Temperature = () => {
         marginTop: "20px",
       }}
     >
-
       <Typography
-        sx={{color: "#679ED2"}}
+        sx={{ color: "#679ED2" }}
         variant="h1"
         component="div"
         gutterBottom
@@ -25,14 +24,13 @@ export const Temperature = () => {
       </Typography>
 
       <Typography
-        sx={{color: "#679ED2"}}
+        sx={{ color: "#679ED2" }}
         variant="h4"
         component="div"
         gutterBottom
       >
         {weather.temp && "℃"}
       </Typography>
-
     </Container>
   );
 };

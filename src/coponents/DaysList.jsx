@@ -1,6 +1,6 @@
 import { Container } from "@mui/material";
 import { useSelector } from "react-redux";
-import { dailyParamsSelector } from "../store/selectors";
+import { dailyParamsSelector } from "../store/weatherLayer/selectors";
 import { Day } from "./Day";
 import { TitleParams } from "./TitleParams";
 
