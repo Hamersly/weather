@@ -1,4 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
+import { reformatDate } from "../../utils/utils";
 
 const weatherParams = (state) => state;
 
@@ -21,11 +22,6 @@ export const pointParamsSelector = createSelector(
   weatherParams,
   (state) => state.weather.point
 );
-
-const reformatDate = (date) => {
-  const item = new Date(date * 1000);
-  return [item.getDate(), item.getMonth() + 1].join(".");
-};
 
 export const dailyParamsSelector = createSelector(weatherParams, (state) =>
   state.weather.daily.map((item) => {

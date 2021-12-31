@@ -5,11 +5,11 @@ export async function getData(lat, lng) {
   const BASE_URL = "https://api.openweathermap.org";
   const url = `${BASE_URL}/data/2.5/onecall?lat=${lat}&lon=${lng}&exclude=hourly,minutely&units=metric&lang=ru&appid=${API_KEY}`;
 
-  const {current, daily} = await axios(url)
+  const { current, daily } = await axios(url)
     .then((response) => response.data)
     .catch((error) => console.log(error));
 
-  const {temp, weather, wind_speed, humidity, pressure} = current
+  const { temp, weather, wind_speed, humidity, pressure } = current;
 
   const today = {
     temp: temp,

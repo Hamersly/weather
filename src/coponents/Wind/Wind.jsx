@@ -13,7 +13,9 @@ export const Wind = () => {
       component="div"
       gutterBottom
     >
-      {!!weather.wind && `Ветер: ${weather.wind} м/сек`}
+      {!!weather.wind
+        ? `Ветер: ${weather.wind} м/сек`
+        : weather.wind === 0 && "Ветра нет"}
     </Typography>
   );
 };
