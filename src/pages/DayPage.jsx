@@ -1,6 +1,6 @@
 import { Container } from "@mui/material";
-import { Header } from "../coponents/Header";
-import { InfoBlock } from "../coponents/InfoBlock";
+import { Header } from "../coponents/Header/Header";
+import { InfoBlock } from "../coponents/InfoBlock/InfoBlock";
 
 export const DayPage = () => {
   return (

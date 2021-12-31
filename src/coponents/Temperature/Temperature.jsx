@@ -1,35 +1,32 @@
 import { Container, Typography } from "@mui/material";
 import { useSelector } from "react-redux";
-import { todayParamsSelector } from "../store/weatherLayer/selectors";
+import { todayParamsSelector } from "../../store/weatherLayer/selectors";
+import {
+  temperatureStyle,
+  temperatureTypographyStyle,
+} from "./Temperature.styles";
 
 export const Temperature = () => {
   const weather = useSelector(todayParamsSelector);
 
   return (
-    <Container
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "flex-start",
-        marginTop: "20px",
-      }}
-    >
+    <Container sx={temperatureStyle}>
       <Typography
-        sx={{ color: "#679ED2" }}
+        sx={temperatureTypographyStyle}
         variant="h1"
         component="div"
         gutterBottom
       >
-        {weather.temp && Math.round(weather.temp)}
+        {!!weather.temp && weather.temp}
       </Typography>
 
       <Typography
-        sx={{ color: "#679ED2" }}
+        sx={temperatureTypographyStyle}
         variant="h4"
         component="div"
         gutterBottom
       >
-        {weather.temp && "℃"}
+        {!!weather.temp && "℃"}
       </Typography>
     </Container>
   );

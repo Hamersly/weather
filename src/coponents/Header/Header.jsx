@@ -1,28 +1,24 @@
 import { Container } from "@mui/material";
 import Autocomplete from "react-google-autocomplete";
 import { useDispatch } from "react-redux";
-import { setPointInfo } from "../store/weatherLayer/weatherSlice";
+import { setPointInfo } from "../../store/weatherLayer/weatherSlice";
+import { headerStyles } from "./Header.styles";
+import { useRef } from "react";
 
 export const Header = () => {
   const dispatch = useDispatch();
+  const textInput = useRef(null);
 
-  const clearValue = () => {
-    document.querySelector(".autocomplete").value = "";
-  };
+  function clearValue() {
+    textInput.current.value = "";
+  }
 
   return (
-    <Container
-      sx={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        margin: "10px 0 35px 0",
-      }}
-    >
+    <Container sx={headerStyles}>
       <Autocomplete
         className="autocomplete"
         onClick={clearValue}
+        ref={textInput}
         onPlaceSelected={(place) => {
           const point = {
             pointName: place.address_components[0].long_name,

@@ -1,20 +1,14 @@
 import { Button, Container } from "@mui/material";
 import { useSelector } from "react-redux";
-import { dailyParamsSelector } from "../store/weatherLayer/selectors";
+import { dailyParamsSelector } from "../../store/weatherLayer/selectors";
 import { Link } from "react-router-dom";
+import { buttonDailyStyles } from "./ButtonDaily.styles";
 
 export const ButtonDaily = () => {
   const daily = useSelector(dailyParamsSelector);
 
   return (
-    <Container
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        margin: "0 0 30px 0",
-      }}
-    >
+    <Container sx={buttonDailyStyles}>
       {daily.length && (
         <Link className="link-button" to="/week">
           <Button variant="contained">Прогноз на неделю</Button>
