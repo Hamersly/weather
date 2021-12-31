@@ -18,7 +18,7 @@ export default function App() {
   };
 
   useEffect(() => {
-    if (!!oldParams.pointName) dispatch(setPointInfo(oldParams));
+    dispatch(setPointInfo(oldParams));
   }, []);
 
   useEffect(() => {
