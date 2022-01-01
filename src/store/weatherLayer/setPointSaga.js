@@ -3,16 +3,13 @@ import { getData } from "./api";
 import { addPointInfo, setPointInfo } from "./weatherSlice";
 
 export default function* setPointSaga() {
-  yield takeLeading(setPointInfo, infoWorker);
+  yield takeLeading("SET_POINT_INFO", infoWorker);
 }
 
 function* infoWorker(action) {
   try {
-    const lat = action.payload.locationLat;
-    const lng = action.payload.locationLng;
-
-    const data = yield call(getData, lat, lng);
-
+    const { lat, lon } = action.payload;
+    const data = yield call(getData, lat, lon);
     const newParams = { ...data, point: action.payload };
 
     yield put(addPointInfo(newParams));
