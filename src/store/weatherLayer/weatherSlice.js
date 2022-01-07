@@ -5,7 +5,7 @@ const initialState = () => {
   const localParams = JSON.parse(localStorage.getItem("weather"));
   if (!localParams) {
     return {
-      point: {},
+      point: { pointName: "Москва", lat: 55.755826, lon: 37.6173 },
       today: {},
       daily: [],
     };
