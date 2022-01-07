@@ -10,7 +10,7 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url(../public/images.jpeg);
+  background-image: url(../src/static/fon.jpeg);
   background-repeat: repeat;
 }
 
@@ -27,13 +27,14 @@ code {
   outline: none;
   border: none;
   background: transparent;
-  color: #679ed2;
-  border-bottom: 1px solid #679ed2;
+  color: white;
+  border-bottom: 1px solid;
   font-size: 20px;
 }
 
 .autocomplete::placeholder {
-  color: #679ed2;
+  color: white;
+  text-shadow: 2px 2px 10px black;
 }
 
 .link-button {

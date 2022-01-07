@@ -14,7 +14,7 @@ export const Condition = () => {
         component="div"
         gutterBottom
       >
-        {weather && weather.condition}
+        {weather && weather.description}
       </Typography>
     </Container>
   );

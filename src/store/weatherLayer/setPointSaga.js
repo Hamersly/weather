@@ -1,6 +1,6 @@
 import { call, put, takeLeading } from "redux-saga/effects";
 import { getData } from "./api";
-import { addPointInfo, setPointInfo } from "./weatherSlice";
+import { addPointInfo } from "./weatherSlice";
 
 export default function* setPointSaga() {
   yield takeLeading("SET_POINT_INFO", infoWorker);

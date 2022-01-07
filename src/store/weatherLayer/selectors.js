@@ -1,5 +1,5 @@
 import { createSelector } from "@reduxjs/toolkit";
-import { reformatDate } from "../../utils/utils";
+import { nowDate, reformatDate } from "../../utils/utils";
 
 const weatherParams = (state) => state;
 
@@ -9,11 +9,12 @@ export const weatherParamsSelector = createSelector(
 );
 
 export const todayParamsSelector = createSelector(weatherParams, (state) => {
-  const { temp, wind, pressure } = state.weather.today;
+  const { temp, wind_speed, pressure, dt } = state.weather.today;
   return {
     ...state.weather.today,
+    dt: nowDate(),
     temp: Math.round(temp),
-    wind: Math.round(wind, -1),
+    wind: Math.round(wind_speed, -1),
     pressure: Math.round(pressure / 1.33322),
   };
 });

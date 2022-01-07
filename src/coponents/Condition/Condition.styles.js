@@ -4,4 +4,7 @@ export const conditionStyles = {
   alignItems: "center",
 };
 
-export const conditionTypographyStyles = { color: "#679ED2" };
+export const conditionTypographyStyles = {
+  color: "white",
+  textShadow: "2px 2px 10px black",
+};

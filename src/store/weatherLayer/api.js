@@ -10,14 +10,17 @@ export async function getData(lat, lng) {
       .then((response) => response.data)
       .catch((error) => console.log(error));
 
-    const { temp, weather, wind_speed, humidity, pressure } = current;
+    const { temp, weather, wind_speed, humidity, pressure, dt } = current;
+    const { description, main } = weather[0];
 
     const today = {
-      temp: temp,
-      condition: weather[0].description,
-      wind: wind_speed,
-      humidity: humidity,
-      pressure: pressure,
+      dt,
+      temp,
+      description,
+      main,
+      wind_speed,
+      humidity,
+      pressure,
     };
 
     return {

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { uniteHandle } from "../../utils/utils";
+import { handleUnite } from "../../utils/utils";
 
 const initialState = () => {
   const localParams = JSON.parse(localStorage.getItem("weather"));
@@ -18,7 +18,7 @@ const weatherSlice = createSlice({
   initialState,
   reducers: {
     addPointInfo(state, action) {
-      state = uniteHandle(state, action.payload);
+      state = handleUnite(state, action.payload);
     },
   },
 });

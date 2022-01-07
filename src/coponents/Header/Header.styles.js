@@ -3,5 +3,4 @@ export const headerStyles = {
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  margin: "10px 0 0 0",
 };

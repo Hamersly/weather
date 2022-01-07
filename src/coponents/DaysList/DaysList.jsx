@@ -11,7 +11,6 @@ export const DaysList = () => {
   return (
     <Container disableGutters={true} sx={daysListStyles}>
       <TitleParams />
-
       {daily.map((item) => (
         <Day item={item} key={item.dt} />
       ))}
