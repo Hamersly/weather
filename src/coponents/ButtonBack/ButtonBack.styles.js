@@ -1,3 +1,5 @@
+import image from "../../static/fon.jpeg";
+
 export const containerButtonBackStyle = {
   display: "inline-flex",
   justifyContent: "center",
@@ -7,6 +9,7 @@ export const containerButtonBackStyle = {
 
 export const buttonBackStyle = {
   boxShadow: "0 0 10px 0px black",
-  textShadow: "2px 2px 10px black",
-  color: "white",
+  color: "yellow",
+  textShadow: "5px 5px 10px black",
+  backgroundImage: `url(${image})`,
 };

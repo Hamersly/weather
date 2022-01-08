@@ -6,6 +6,6 @@ export const temperatureStyle = {
 };
 
 export const temperatureTypographyStyle = {
-  color: "white",
-  textShadow: "2px 2px 10px black",
+  color: "yellow",
+  textShadow: "5px 5px 10px black",
 };

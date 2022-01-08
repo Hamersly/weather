@@ -7,11 +7,11 @@ export const Day = ({ item }) => {
 
   return (
     <Container sx={dayStyles}>
-      <Typography sx={dayComponentStyles} variant="h6" component="div">
+      <Typography sx={dayComponentStyles} variant="h5" component="div">
         {dt}
       </Typography>
 
-      <Typography sx={dayComponentStyles} variant="h6" component="div">
+      <Typography sx={dayComponentStyles} variant="h5" component="div">
         {temp.day}°...{temp.night}°
       </Typography>
 

@@ -1,3 +1,5 @@
+import image from "../../static/fon.jpeg";
+
 export const containerButtonDailyStyles = {
   display: "flex",
   justifyContent: "center",
@@ -8,5 +10,6 @@ export const containerButtonDailyStyles = {
 export const buttonDailyStyles = {
   boxShadow: "0 0 10px 0px black",
   textShadow: "2px 2px 10px black",
-  color: "white",
+  color: "yellow",
+  backgroundImage: `url(${image})`,
 };

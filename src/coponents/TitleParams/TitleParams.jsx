@@ -7,15 +7,15 @@ import {
 export const TitleParams = () => {
   return (
     <Container sx={titleParamsStyle}>
-      <Typography sx={titleParamsTypographyStyle} variant="h6" component="div">
+      <Typography sx={titleParamsTypographyStyle} variant="h5" component="div">
         Дата
       </Typography>
 
-      <Typography sx={titleParamsTypographyStyle} variant="h6" component="div">
+      <Typography sx={titleParamsTypographyStyle} variant="h5" component="div">
         °С
       </Typography>
 
-      <Typography sx={titleParamsTypographyStyle} variant="h6" component="div">
+      <Typography sx={titleParamsTypographyStyle} variant="h5" component="div">
         Осадки
       </Typography>
     </Container>
