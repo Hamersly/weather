@@ -5,17 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { weatherParamsSelector } from "./store/weatherLayer/selectors";
 import { useEffect } from "react";
 import { setPointInfo } from "./store/weatherLayer/actions";
-import Snow from "./static/snow.jpeg";
-import Clouds from "./static/clouds.jpg";
-import Clear from "./static/clear.jpg";
-import Atmosphere from "./static/atmosphere.jpg";
-import Rain from "./static/rain.jpg";
-import Drizzle from "./static/drizzle.jpg";
-import Thunderstorm from "./static/thunderstorm.jpg";
+import { AddPointPage } from "./pages/AddPointPage/AddPointPage";
+import { selectedFon } from "./utils/utils";
+import { Container } from "@mui/material";
 
 export default function App() {
   const weather = useSelector(weatherParamsSelector);
   const dispatch = useDispatch();
+
+  const status = weather.today.main;
 
   const { pointName, lat, lon } = weather.point;
 
@@ -29,47 +27,17 @@ export default function App() {
     dispatch(setPointInfo(oldParams));
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("weather", JSON.stringify(weather));
-  });
-
-  const fon = () => {
-    switch (weather.today.main) {
-      case "Snow":
-        return (document.body.style.backgroundImage = `url(${Snow})`);
-      case "Clouds":
-        return (document.body.style.backgroundImage = `url(${Clouds})`);
-      case "Clear":
-        return (document.body.style.backgroundImage = `url(${Clear})`);
-      case "Mist" ||
-        "Smoke" ||
-        "Haze" ||
-        "Dust" ||
-        "Fog" ||
-        "Sand" ||
-        "Ash" ||
-        "Squall" ||
-        "Tornado":
-        return (document.body.style.backgroundImage = `url(${Atmosphere})`);
-      case "Rain":
-        return (document.body.style.backgroundImage = `url(${Rain})`);
-      case "Drizzle":
-        return (document.body.style.backgroundImage = `url(${Drizzle})`);
-      case "Thunderstorm":
-        return (document.body.style.backgroundImage = `url(${Thunderstorm})`);
-      default:
-        break;
-    }
-  };
-
-  useEffect(() => fon());
+  useEffect(() => localStorage.setItem("weather", JSON.stringify(weather)));
 
   return (
-    <div
+    <Container
+      maxWidth="100%"
       style={{
         backgroundSize: "cover",
         backgroundPosition: "center center",
-        backgroundAttachment: "fixed",
+        height: "100vh",
+        backgroundImage: selectedFon(status),
+        padding: "0",
       }}
     >
       <HashRouter>
@@ -80,9 +48,12 @@ export default function App() {
           <Route exact path="/week">
             <WeekPage />
           </Route>
+          <Route exact path="/add_point">
+            <AddPointPage />
+          </Route>
           <Redirect to="/day" />
         </Switch>
       </HashRouter>
-    </div>
+    </Container>
   );
 }

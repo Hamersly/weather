@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 body {
@@ -14,6 +13,7 @@ body {
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
+  position: relative;
 }
 
 code {
@@ -42,4 +42,3 @@ code {
 .link-button {
   text-decoration: none;
 }
-

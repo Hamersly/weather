@@ -4,10 +4,12 @@ import { useDispatch } from "react-redux";
 import { headerStyles } from "./Header.styles";
 import { useRef } from "react";
 import { setPointInfo } from "../../store/weatherLayer/actions";
+import { useHistory } from "react-router-dom";
 
 export const Header = () => {
   const dispatch = useDispatch();
   const textInput = useRef(null);
+  const history = useHistory();
 
   function clearValue() {
     textInput.current.value = "";
@@ -19,6 +21,7 @@ export const Header = () => {
         className="autocomplete"
         onClick={clearValue}
         ref={textInput}
+        autoFocus
         onPlaceSelected={(place) => {
           const { lat, lng } = place.geometry.location;
           const point = {
@@ -27,6 +30,7 @@ export const Header = () => {
             lon: lng(),
           };
           dispatch(setPointInfo(point));
+          history.push("/day");
         }}
       />
     </Container>
