@@ -1,13 +1,17 @@
-import { Container } from "@mui/material";
+import { Box } from "@mui/material";
 import { InfoBlock } from "../../coponents/InfoBlock/InfoBlock";
 import { DayPageStyle } from "./DayPage.styles";
 import { AddPointLink } from "../../coponents/AddPointLink/AddPointLink";
+import { WeekTitle } from "../../coponents/WeekTitle/WeekTitle";
+import { DaysList } from "../../coponents/DaysList/DaysList";
 
 export const DayPage = () => {
   return (
-    <Container sx={DayPageStyle}>
+    <Box sx={DayPageStyle}>
       <AddPointLink />
       <InfoBlock />
-    </Container>
+      <WeekTitle />
+      <DaysList />
+    </Box>
   );
 };

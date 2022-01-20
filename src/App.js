@@ -1,13 +1,12 @@
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import { DayPage } from "./pages/DayPage/DayPage";
-import { WeekPage } from "./pages/WeekPage/WeekPage";
 import { useDispatch, useSelector } from "react-redux";
 import { weatherParamsSelector } from "./store/weatherLayer/selectors";
 import { useEffect } from "react";
 import { setPointInfo } from "./store/weatherLayer/actions";
 import { AddPointPage } from "./pages/AddPointPage/AddPointPage";
 import { selectedFon } from "./utils/utils";
-import { Container } from "@mui/material";
+import { Box } from "@mui/material";
 
 export default function App() {
   const weather = useSelector(weatherParamsSelector);
@@ -30,14 +29,14 @@ export default function App() {
   useEffect(() => localStorage.setItem("weather", JSON.stringify(weather)));
 
   return (
-    <Container
-      maxWidth="100%"
-      style={{
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
         backgroundSize: "cover",
         backgroundPosition: "center center",
-        height: "100vh",
+        height: "100%",
         backgroundImage: selectedFon(status),
-        padding: "0",
       }}
     >
       <HashRouter>
@@ -45,15 +44,12 @@ export default function App() {
           <Route exact path="/day">
             <DayPage />
           </Route>
-          <Route exact path="/week">
-            <WeekPage />
-          </Route>
           <Route exact path="/add_point">
             <AddPointPage />
           </Route>
           <Redirect to="/day" />
         </Switch>
       </HashRouter>
-    </Container>
+    </Box>
   );
 }

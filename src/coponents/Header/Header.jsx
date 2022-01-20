@@ -1,4 +1,4 @@
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import Autocomplete from "react-google-autocomplete";
 import { useDispatch } from "react-redux";
 import { headerStyles } from "./Header.styles";
@@ -16,7 +16,7 @@ export const Header = () => {
   }
 
   return (
-    <Container sx={headerStyles}>
+    <Box sx={headerStyles}>
       <Autocomplete
         className="autocomplete"
         onClick={clearValue}
@@ -33,6 +33,6 @@ export const Header = () => {
           history.push("/day");
         }}
       />
-    </Container>
+    </Box>
   );
 };
