@@ -1,8 +1,8 @@
-import { Avatar, Container, Typography } from "@mui/material";
-import { dayComponentStyles, dayStyles } from "./Day.styles";
+import {Avatar, Container, Typography} from "@mui/material";
+import {dayComponentStyles, dayStyles} from "./Day.styles";
 
-export const Day = ({ item }) => {
-  const { dt, temp, weather } = item;
+export const Day = ({item}) => {
+  const {dt, temp, weather} = item;
 
   return (
     <Container sx={dayStyles}>
@@ -11,7 +11,7 @@ export const Day = ({ item }) => {
       </Typography>
 
       <Typography sx={dayComponentStyles} variant="h5" component="div">
-        {temp.day}°...{temp.night}°
+        {temp.night}°...{temp.day}°
       </Typography>
 
       <Container disableGutters={true} sx={dayComponentStyles}>

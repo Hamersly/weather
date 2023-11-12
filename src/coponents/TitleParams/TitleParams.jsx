@@ -1,4 +1,4 @@
-import { Container, Typography } from "@mui/material";
+import {Container, Typography} from "@mui/material";
 import {
   titleParamsStyle,
   titleParamsTypographyStyle,
@@ -12,7 +12,7 @@ export const TitleParams = () => {
       </Typography>
 
       <Typography sx={titleParamsTypographyStyle} variant="h5" component="div">
-        °С
+        °С Н/Д
       </Typography>
 
       <Typography sx={titleParamsTypographyStyle} variant="h5" component="div">
